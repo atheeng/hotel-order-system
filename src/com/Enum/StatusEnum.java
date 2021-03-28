@@ -17,7 +17,5 @@ public enum StatusEnum {
 
     public String getName() {
         return name;
-    }
-  
-    
+    }    
 }
