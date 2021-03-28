@@ -269,7 +269,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jTextField3.setText("jTextField3");
 
-        menuTab.setBackground(new java.awt.Color(153, 255, 255));
+        menuTab.setBackground(new java.awt.Color(0, 204, 204));
         menuTab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuTabMouseClicked(evt);
@@ -1133,7 +1133,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         menuTab.addTab("OrderFoodList", jPanel2);
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("HOTEL FOOD ORDER SYSTEM");
