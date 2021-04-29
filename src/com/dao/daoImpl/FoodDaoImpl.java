@@ -170,7 +170,7 @@ public class FoodDaoImpl implements FoodDao {
         try {
             conn = DataBaseConnection.getInstance().getConnection();
             Statement statement = conn.createStatement();
-            ResultSet rs = statement.executeQuery("select id,name,category,price,total_quantity,description FROM food where product_name like '%" + name + "%' and product_type like '%" + type + "%' ");
+            ResultSet rs = statement.executeQuery("select id,name,category,price,total_quantity,description FROM food where name like '%" + name + "%' and category like '%" + type + "%' ");
             while (rs.next()) {
                 Food product = new Food();
                 product.setId(rs.getInt(1));
