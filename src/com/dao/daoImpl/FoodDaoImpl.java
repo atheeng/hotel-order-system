@@ -22,7 +22,7 @@ public class FoodDaoImpl implements FoodDao {
         if (id == 0) {
             boolean existingUser = existingProduct(food.getName(), food.getCategory());
             if (existingUser == true) {
-                return food.getName()+ " and " + food.getCategory()+ " product is already exist please make unique. ";
+                return food.getName()+ " and " + food.getCategory()+ " category Food is already exist please make unique. ";
             } else {
                 try {
                     conn = DataBaseConnection.getInstance().getConnection();
@@ -98,7 +98,7 @@ public class FoodDaoImpl implements FoodDao {
         Connection conn = null;
         try {
             conn = DataBaseConnection.getInstance().getConnection();
-            String query = "delete from product where id=?";
+            String query = "delete from food where id=?";
             PreparedStatement preparedStmt = conn.prepareStatement(query);
             preparedStmt.setInt(1, productId);
             preparedStmt.executeUpdate();
@@ -143,9 +143,9 @@ public class FoodDaoImpl implements FoodDao {
         Integer id = null;
         try {
             conn = DataBaseConnection.getInstance().getConnection();
-            String query = "SELECT id FROM Food WHERE PRODUCT_NAME =? AND PRODUCT_TYPE=? ";
+            String query = "SELECT id FROM Food WHERE NAME =? AND CATEGORY=? ";
             PreparedStatement preparedStmt = conn.prepareStatement(query);
-            preparedStmt.setString(1, name);
+            preparedStmt.setString(1, name.toUpperCase());
             preparedStmt.setString(2, type);
             ResultSet rs = preparedStmt.executeQuery();
             while (rs.next()) {
